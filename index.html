@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixTech - Verificar Estado de Reparación</title>
+    <link rel="stylesheet" href="css/tracking.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <div class="tracking-container">
+        <header>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="FixTech Logo">
+                <h1>FixTech</h1>
+            </div>
+            <p>Sistema de Seguimiento de Reparaciones</p>
+        </header>
+
+        <main>
+            <div class="tracking-card">
+                <h2>Verificar Estado de Reparación</h2>
+                <p>Ingrese su número de seguimiento para consultar el estado de su reparación</p>
+                
+                <form id="tracking-form">
+                    <div class="form-group">
+                        <label for="tracking-number">Número de Seguimiento</label>
+                        <input type="text" id="tracking-number" placeholder="Ej: FT1001" required>
+                        <small>Este número se le proporcionó cuando registró su reparación</small>
+                    </div>
+                    <button type="submit" class="btn-primary">Verificar Estado</button>
+                </form>
+
+                <div id="tracking-result" class="hidden">
+                    <div class="status-header">
+                        <h3>Estado de su Reparación</h3>
+                        <span id="tracking-id"></span>
+                    </div>
+                    
+                    <div class="repair-details">
+                        <div class="detail-group">
+                            <label>Dispositivo:</label>
+                            <span id="device-detail"></span>
+                        </div>
+                        <div class="detail-group">
+                            <label>Problema reportado:</label>
+                            <span id="issue-detail"></span>
+                        </div>
+                        <div class="detail-group">
+                            <label>Fecha de ingreso:</label>
+                            <span id="date-detail"></span>
+                        </div>
+                        <div class="detail-group">
+                            <label>Técnico asignado:</label>
+                            <span id="technician-detail"></span>
+                        </div>
+                    </div>
+
+                    <div class="status-container">
+                        <div class="status-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+                            <div class="progress-labels">
+                                <span class="progress-label active">Recibido</span>
+                                <span class="progress-label" id="label-diagnostico">En diagnóstico</span>
+                                <span class="progress-label" id="label-reparacion">En reparación</span>
+                                <span class="progress-label" id="label-completado">Completado</span>
+                            </div>
+                        </div>
+
+                        <div class="current-status">
+                            <h4>Estado actual:</h4>
+                            <div class="status-badge" id="status-badge"></div>
+                        </div>
+                    </div>
+
+                    <div class="estimated-completion" id="completion-container">
+                        <h4>Tiempo estimado para completar:</h4>
+                        <p id="completion-time"></p>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn-secondary" onclick="window.print()">Imprimir esta información</button>
+                        <button class="btn-primary" onclick="checkAnother()">Consultar otra reparación</button>
+                    </div>
+                </div>
+
+                <div id="error-message" class="hidden">
+                    <div class="error-icon">!</div>
+                    <h3>No encontramos su reparación</h3>
+                    <p>Verifique que el número de seguimiento sea correcto. Si el problema persiste, contacte con nosotros.</p>
+                    <button class="btn-primary" onclick="checkAnother()">Intentar de nuevo</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>¿Necesita ayuda? Contáctenos al <strong>+1 234 567 890</strong> o envíe un correo a <strong>soporte@fixtech.com</strong></p>
+            <p>Horario de atención: Lunes a Viernes de 9:00 a 18:00, Sábados de 9:00 a 14:00</p>
+            <a href="login.html">Acceso para personal →</a>
+        </footer>
+    </div>
+
+    <script src="js/tracking.js"></script>
+</body>
+</html>

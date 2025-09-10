@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixTech - Sistema de Gestión</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="FixTech Logo">
+                <h2>FixTech</h2>
+            </div>
+            <div class="menu-item active" data-target="dashboard">
+                <i>📊</i> Dashboard
+            </div>
+            <div class="menu-item" data-target="clients">
+                <i>👥</i> Clientes
+            </div>
+            <div class="menu-item" data-target="repairs">
+                <i>🔧</i> Reparaciones
+            </div>
+            <div class="menu-item" data-target="inventory">
+                <i>📦</i> Inventario
+            </div>
+            <div class="menu-item" data-target="technicians">
+                <i>👨‍💼</i> Técnicos
+            </div>
+            <div class="menu-item" data-target="reports">
+                <i>📈</i> Reportes
+            </div>
+            <div class="menu-item" onclick="window.open('../index.html', '_blank')">
+                <i>🔍</i> Verificar Reparación
+            </div>
+            <div class="menu-item" onclick="logout()">
+                <i>🚪</i> Cerrar Sesión
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Dashboard - Sistema de Gestión</h1>
+                <div>
+                    <span id="current-user">Usuario: Admin</span>
+                    <span> | </span>
+                    <span>Hoy: <span id="current-date"></span></span>
+                </div>
+            </div>
+            
+            <!-- Secciones de contenido cargadas dinámicamente -->
+            <div id="content-section">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Reparaciones Activas</div>
+                            <div class="card-icon">🔧</div>
+                        </div>
+                        <div class="card-number">12</div>
+                        <div>+2 desde ayer</div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Clientes Registrados</div>
+                            <div class="card-icon">👥</div>
+                        </div>
+                        <div class="card-number">84</div>
+                        <div>+5 esta semana</div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Ingresos Mensuales</div>
+                            <div class="card-icon">💰</div>
+                        </div>
+                        <div class="card-number">$3,450</div>
+                        <div>+15% mes anterior</div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Repuestos en Stock</div>
+                            <div class="card-icon">📦</div>
+                        </div>
+                        <div class="card-number">127</div>
+                        <div>12 bajos en stock</div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3 class="form-title">Reparaciones Recientes</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Dispositivo</th>
+                                <th>Problema</th>
+                                <th>Técnico</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#FT1001</td>
+                                <td>Juan Pérez</td>
+                                <td>Samsung Galaxy S21</td>
+                                <td>Pantalla rota</td>
+                                <td>Roberto Martínez</td>
+                                <td><span class="status status-completed">Completado</span></td>
+                                <td>
+                                    <button class="btn btn-primary">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#FT1002</td>
+                                <td>María García</td>
+                                <td>iPhone 12</td>
+                                <td>Batería defectuosa</td>
+                                <td>Ana Rodríguez</td>
+                                <td><span class="status status-in-progress">En Proceso</span></td>
+                                <td>
+                                    <button class="btn btn-primary">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#FT1003</td>
+                                <td>Carlos López</td>
+                                <td>Xiaomi Redmi Note 10</td>
+                                <td>No enciende</td>
+                                <td>Javier Sánchez</td>
+                                <td><span class="status status-pending">Pendiente</span></td>
+                                <td>
+                                    <button class="btn btn-primary">Editar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+:root {
+    --primary: #3498db;
+    --secondary: #2c3e50;
+    --accent: #e74c3c;
+    --success: #2ecc71;
+    --warning: #f39c12;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --gray: #95a5a6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.tracking-container {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header {
+    background: var(--secondary);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.logo h1 {
+    font-size: 28px;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+main {
+    padding: 30px;
+}
+
+.tracking-card {
+    background: white;
+    border-radius: 8px;
+}
+
+.tracking-card h2 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tracking-card > p {
+    color: var(--gray);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.form-group small {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #f5f7fa;
+}
+
+.hidden {
+    display: none;
+}
+
+#tracking-result, #error-message {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.status-header h3 {
+    color: var(--secondary);
+}
+
+#tracking-id {
+    background: var(--light);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.repair-details {
+    margin-bottom: 30px;
+}
+
+.detail-group {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.detail-group label {
+    font-weight: 500;
+    width: 150px;
+    color: var(--dark);
+}
+
+.detail-group span {
+    flex: 1;
+}
+
+.status-container {
+    margin-bottom: 30px;
+}
+
+.status-progress {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.5s;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.progress-label {
+    font-size: 12px;
+    color: var(--gray);
+    position: relative;
+    text-align: center;
+    width: 25%;
+}
+
+.progress-label::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #eee;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px #eee;
+}
+
+.progress-label.active {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.progress-label.active::before {
+    background: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary);
+}
+
+.current-status {
+    text-align: center;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.status-pending {
+    background: #ffeaa7;
+    color: #d35400;
+}
+
+.status-progress {
+    background: #81ecec;
+    color: #00cec9;
+}
+
+.status-completed {
+    background: #55efc4;
+    color: #00b894;
+}
+
+.estimated-completion {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.estimated-completion h4 {
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+#error-message {
+    text-align: center;
+}
+
+.error-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+footer {
+    background: var(--light);
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .detail-group {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    
+    .detail-group label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    .progress-label {
+        font-size: 10px;
+    }
+    
+    .status-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #tracking-id {
+        margin-top: 10px;
+    }
+}
